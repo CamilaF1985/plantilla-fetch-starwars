@@ -20,7 +20,11 @@ function CardPersonaje({ uid }) {
                 if (result.error) {
                     setError(result.error.message);
                 } else {
-                    setPersonaje(result);
+                    setPersonaje({
+                        name: result.properties.name,
+                        gender: result.properties.gender,
+                        eye_color: result.properties.eye_color,
+                    });
                 }
             } catch (error) {
                 console.error('Error al traer la data:', error);
